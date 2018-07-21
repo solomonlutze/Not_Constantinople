@@ -4,7 +4,7 @@ import {render} from 'react-dom'
 
 const url = (process.env.NODE_ENV === 'development') 
     ? 'http://127.0.0.1:5000/'
-    : 'https://slutze-flask.herokuapp.com';
+    : 'https://not-constantinople.herokuapp.com';
 
 export default class CityList extends Component {
 

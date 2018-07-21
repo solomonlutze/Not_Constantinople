@@ -4,10 +4,12 @@ import {render} from 'react-dom'
 import CityList from './components/CityList';
 
 const App = () => {
- return <div>
-  <h1>It Heckin Works With React! Ya!!</h1>
-  <CityList/>
- </div>
+    return (
+        <div>
+        <h1>Deploying from github!</h1>
+        <CityList/>
+        </div>
+    );
 }
 
 render(

@@ -6,7 +6,7 @@ import CityList from './components/CityList';
 const App = () => {
     return (
         <div>
-        <h1>Deploying from github!</h1>
+        <h1>Working inside git folder!</h1>
         <CityList/>
         </div>
     );

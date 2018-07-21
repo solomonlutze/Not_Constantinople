@@ -14,6 +14,7 @@ export default class CityList extends Component {
     }
 
     componentDidMount() {
+        console.log("env: "+process.env.NODE_ENV);
         console.log("fetch??");
         fetch(`${url}/api/v1.0/cities`, {
             method: 'GET',

@@ -5,3 +5,4 @@ venv/*
 json_exporter.py
 cultures.py
 Output/*
+site/node_modules/*

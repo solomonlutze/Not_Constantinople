@@ -66,7 +66,7 @@ def markov(text_model):
 
 
 # Generate gibberish.
-def generate(filename, filename_suffix, dataset):
+def generate(dataset):
     text_model = get_text_model(dataset)
     added = set()
     generated = []
@@ -75,12 +75,22 @@ def generate(filename, filename_suffix, dataset):
         if real and item not in added:
             generated.append(item + "\n")
             added.update({item})
+    return generated
+
+def generate_for_json(culture_input):
+    return {
+        "provinces": generate(get_provinces(culture_input)),
+        "settlements": generate(get_settlements(culture_input))
+    }
+
+#Generate data and write to output file.
+def generate_and_write(filename, filename_suffix, dataset):
+    generated = generate(dataset)
     directory = getcwd() + "/Output"
     if not isdir(directory):
         mkdir(directory)
     with io.open(directory + "/" + filename + "_" + filename_suffix + ".txt", mode="wt", encoding="utf-8") as f:
         f.writelines(generated)
-
 
 # Load the stored cultural blends and generate some names.
 for f in listdir(getcwd() + "/Input"):
@@ -88,5 +98,5 @@ for f in listdir(getcwd() + "/Input"):
         # Get the saved cultural blend.
         json_culture = loads(j.read())
         # Generate names of provinces and settlements.
-        generate(json_culture["name"], "provinces", get_provinces(json_culture["culture"]))
-        generate(json_culture["name"], "settlements", get_settlements(json_culture["culture"]))
+        generate_and_write(json_culture["name"], "provinces", get_provinces(json_culture["culture"]))
+        generate_and_write(json_culture["name"], "settlements", get_settlements(json_culture["culture"]))

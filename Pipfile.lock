@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3399a1597190800988b814e49044a8eecf1df99db757596de1226c83d3e78d47"
+            "sha256": "95ff2b97d36dc07e70bbcd60adbb7fc8f5da76802699f344b81d45df55f6a1a8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -52,11 +52,25 @@
             ],
             "version": "==2.10"
         },
+        "markovify": {
+            "hashes": [
+                "sha256:f016ef58f60a8afb925aa16803538561c4b00375bf0b7f84952c29993805b9a7"
+            ],
+            "index": "pypi",
+            "version": "==0.7.1"
+        },
         "markupsafe": {
             "hashes": [
                 "sha256:a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"
             ],
             "version": "==1.0"
+        },
+        "unidecode": {
+            "hashes": [
+                "sha256:72f49d3729f3d8f5799f710b97c1451c5163102e76d64d20e170aedbbd923582",
+                "sha256:8c33dd588e0c9bc22a76eaa0c715a5434851f726131bd44a6c26471746efabf5"
+            ],
+            "version": "==1.0.22"
         },
         "werkzeug": {
             "hashes": [

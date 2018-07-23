@@ -70,11 +70,12 @@ export default class GeneratorInputForm extends Component {
     }
 
     render() {
+        const { cultureWeights } = this.state; 
         return (
             <div className='generator-input-form'>
                 {this.renderWeightOptions()}
                 <button onClick={this.onAddOption}>Add Culture</button>
-                <button onClick={this.onGenerate}>Generate!</button>
+                <button disabled={cultureWeights.length === 0} onClick={this.onGenerate}>Generate!</button>
             </div>
         );
     }

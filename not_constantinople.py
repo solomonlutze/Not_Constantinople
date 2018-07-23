@@ -78,6 +78,8 @@ def generate(dataset):
     return generated
 
 def generate_for_json(culture_input):
+    print("generate for json")
+    print(culture_input)
     return {
         "provinces": generate(get_provinces(culture_input)),
         "settlements": generate(get_settlements(culture_input))

@@ -1,4 +1,5 @@
-from flask import Flask, render_template, jsonify, send_file
+from flask import Flask, render_template, jsonify, send_file, request
+from json import loads
 app = Flask(__name__, template_folder='site/templates')
 import not_constantinople
 
@@ -19,7 +20,14 @@ input = {
     "name": "lyria"
 }
     
+@app.route('/api/v1.0/allowed_cultures')
+def get_allowed_cultures():
+    return send_file('site/static/data/allowed_cultures.json')
 
-@app.route('/api/v1.0/cities', methods=['GET'])
+@app.route('/api/v1.0/cities', methods=['GET', 'POST'])
 def get_cities():
-    return jsonify(not_constantinople.generate_for_json(input["culture"]))
+    content = request.get_json(silent=True)
+    print(content)
+    print(content["cultures"])
+    print("cities?")
+    return jsonify(not_constantinople.generate_for_json(content["cultures"]))
